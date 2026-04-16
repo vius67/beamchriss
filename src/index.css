@@ -1,0 +1,196 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CSS Custom Properties for Light Mode */
+@layer base {
+  :root {
+    /* Primary purple - softer palette (#9580d1) */
+    --primary-50: 263 100% 98%; /* #faf8ff */
+    --primary-100: 263 100% 97%; /* #f4f0ff */
+    --primary-200: 263 100% 93%; /* #e8e0ff */
+    --primary-300: 263 75% 87%; /* #d4c4f7 */
+    --primary-400: 263 55% 78%; /* #b8a4e8 */
+    --primary-500: 263 40% 66%; /* #9580d1 - NEW PRIMARY */
+    --primary-600: 263 35% 57%; /* #7c68b8 */
+    --primary-700: 263 30% 49%; /* #6b5a9e */
+
+    /* Primary uses 500 (softer purple) */
+    --primary: 263 40% 66%; /* #9580d1 */
+    --primary-foreground: 0 0% 100%;
+
+    /* Grays - warmer neutral palette */
+    --gray-50: 0 0% 98%; /* #fafafa */
+    --gray-100: 0 0% 96%; /* #f5f5f5 */
+    --gray-150: 0 0% 93%; /* #eeeeee */
+    --gray-200: 0 0% 90%; /* #e5e5e5 */
+    --gray-300: 0 0% 83%; /* #d4d4d4 */
+    --gray-400: 0 0% 64%; /* #a3a3a3 */
+    --gray-500: 0 0% 45%; /* #737373 */
+    --gray-600: 0 0% 32%; /* #525252 */
+    --gray-700: 0 0% 25%; /* #404040 */
+    --gray-800: 0 0% 15%; /* #262626 */
+    --gray-900: 0 0% 9%; /* #171717 */
+
+    /* Semantic - muted pastels */
+    --success: 142 69% 58%; /* #4ade80 */
+    --success-bg: 142 76% 97%; /* #f0fdf4 */
+    --success-text: 143 64% 24%; /* #166534 */
+    --warning: 45 93% 56%; /* #fbbf24 */
+    --warning-bg: 55 92% 97%; /* #fefce8 */
+    --warning-text: 35 92% 33%; /* #854d0e */
+    --error: 0 91% 71%; /* #f87171 */
+    --error-bg: 0 86% 97%; /* #fef2f2 */
+    --error-text: 0 74% 42%; /* #991b1b */
+
+    /* Background colors */
+    --background: var(--gray-50); /* #fafafa warm gray, not pure white */
+    --foreground: var(--gray-900);
+
+    /* Card colors */
+    --card: 0 0% 100%;
+    --card-foreground: var(--gray-900);
+
+    /* Popover colors */
+    --popover: 0 0% 100%;
+    --popover-foreground: var(--gray-900);
+
+    /* Secondary colors */
+    --secondary: var(--gray-100);
+    --secondary-foreground: var(--gray-900);
+
+    /* Muted colors */
+    --muted: var(--gray-100);
+    --muted-foreground: var(--gray-500);
+
+    /* Accent colors */
+    --accent: var(--primary-100);
+    --accent-foreground: var(--primary-700);
+
+    /* Destructive colors */
+    --destructive: var(--error);
+    --destructive-foreground: 0 0% 100%;
+
+    /* Border and input colors */
+    --border: var(--gray-150); /* #eeeeee softer borders */
+    --input: var(--gray-200);
+    --ring: var(--primary-500); /* Softer purple for focus rings */
+
+    /* Border radius */
+    --radius: 0.5rem;
+
+    /* Skeleton loading - softer purple tinted */
+    --skeleton-from: var(--primary-100);
+    --skeleton-to: var(--primary-200);
+  }
+
+  /* Dark Mode - #121212 base (not pure black per research) */
+  .dark {
+    /* Primary purple - adapted for dark mode contrast */
+    --primary-50: 263 50% 20%; /* Dark purple background */
+    --primary-100: 263 50% 25%;
+    --primary-200: 263 45% 35%;
+    --primary-300: 263 45% 50%;
+    --primary-400: 263 50% 60%;
+    --primary-500: 263 55% 70%; /* Lighter for dark mode visibility */
+    --primary-600: 263 60% 78%;
+    --primary-700: 263 65% 85%;
+
+    --primary: 263 55% 70%; /* Lighter purple for dark mode */
+    --primary-foreground: 0 0% 10%;
+
+    /* Grays - inverted for dark mode */
+    --gray-50: 0 0% 9%; /* #171717 */
+    --gray-100: 0 0% 12%; /* #1f1f1f */
+    --gray-150: 0 0% 15%; /* #262626 */
+    --gray-200: 0 0% 18%; /* #2e2e2e */
+    --gray-300: 0 0% 25%; /* #404040 */
+    --gray-400: 0 0% 40%; /* #666666 */
+    --gray-500: 0 0% 55%; /* #8c8c8c */
+    --gray-600: 0 0% 70%; /* #b3b3b3 */
+    --gray-700: 0 0% 80%; /* #cccccc */
+    --gray-800: 0 0% 90%; /* #e5e5e5 */
+    --gray-900: 0 0% 96%; /* #f5f5f5 */
+
+    /* Semantic - adapted for dark mode */
+    --success: 142 69% 45%; /* Darker green */
+    --success-bg: 142 50% 15%; /* Dark green bg */
+    --success-text: 142 69% 75%; /* Light green text */
+    --warning: 45 93% 45%; /* Darker amber */
+    --warning-bg: 45 50% 15%; /* Dark amber bg */
+    --warning-text: 45 93% 75%; /* Light amber text */
+    --error: 0 91% 55%; /* Darker red */
+    --error-bg: 0 50% 15%; /* Dark red bg */
+    --error-text: 0 91% 80%; /* Light red text */
+
+    /* Background: #121212 */
+    --background: 0 0% 7%;
+    --foreground: var(--gray-900);
+
+    /* Card: slightly lighter than background */
+    --card: 0 0% 10%;
+    --card-foreground: var(--gray-900);
+
+    /* Popover */
+    --popover: 0 0% 10%;
+    --popover-foreground: var(--gray-900);
+
+    /* Secondary */
+    --secondary: var(--gray-200);
+    --secondary-foreground: var(--gray-900);
+
+    /* Muted */
+    --muted: var(--gray-200);
+    --muted-foreground: var(--gray-500);
+
+    /* Accent */
+    --accent: var(--primary-200);
+    --accent-foreground: var(--primary-700);
+
+    /* Destructive */
+    --destructive: var(--error);
+    --destructive-foreground: 0 0% 100%;
+
+    /* Border and input */
+    --border: var(--gray-300);
+    --input: var(--gray-300);
+    --ring: var(--primary-500);
+
+    /* Skeleton loading - purple tinted for dark mode */
+    --skeleton-from: var(--primary-100);
+    --skeleton-to: var(--primary-200);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background font-sans text-foreground antialiased;
+  }
+
+  /* Accessibility: Better focus states */
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-ring;
+  }
+
+  /* Remove default focus outline, keep for keyboard */
+  :focus:not(:focus-visible) {
+    @apply outline-none;
+  }
+}
+
+@layer components {
+  /* Base button styles (legacy, prefer Button component) */
+  .btn-primary {
+    @apply bg-primary px-4 py-2 font-medium text-primary-foreground transition-colors hover:bg-p-600 focus:ring-2 focus:ring-primary focus:ring-offset-2;
+  }
+}
+
+/* PDF viewer: hide content when printing (Ctrl+P) */
+@media print {
+  .pdf-viewer-overlay,
+  .pdf-viewer-overlay * {
+    visibility: hidden !important;
+  }
+}
